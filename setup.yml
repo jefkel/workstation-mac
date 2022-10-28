@@ -1,0 +1,30 @@
+---
+- hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Setup SSH environment
+      import_tasks: tasks/prep-ssh.yaml
+
+    - name: Brew Cask App installation (failure expected)
+      community.general.homebrew:
+        name: visual-studio-code, drawio
+        state: present
+        update_homebrew: yes
+      ignore_errors: true
+
+    - name: more brew apps
+      community.general.homebrew:
+        name: "{{ item }}"
+        state: latest
+      with_items:
+        - ansible-lint
+        - podman
+        - jq
+        - gojq
+        - openshift-cli
+        - kubernetes-cli@1.22
+        - kubectl
+        - minio-mc
+        - govc
+

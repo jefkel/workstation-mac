@@ -1,0 +1,7 @@
+---
+vault_id:
+  first: Jeff
+  last: Kelly
+  email: jeff.kelly@mobia.io
+  
+vault_sshkeyname: "jk-mobia-id_ed25519"

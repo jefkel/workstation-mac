@@ -1,0 +1,14 @@
+---
+- name: check existing key
+  stat:
+    path: ~/.ssh/{{ defaultkeyname }}
+  register: deployedKey
+
+- name: DEBUG key name
+  debug:
+    msg: "The key to look for is {{ defaultkeyname }}"
+
+- name: DEBUG key status
+  debug:
+    msg: "The {{ defaultkeyname }} file or directory exists"
+  when: deployedKey.stat.exists
