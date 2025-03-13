@@ -16,6 +16,7 @@
         - drawio
         - notion
         - obs
+      tags: [ apps ]
     - name: More brew apps
       community.general.homebrew:
         name: "{{ item }}"
@@ -31,3 +32,50 @@
         - kubectl
         - minio-mc
         - govc
+      tags: [ apps ]
+
+# MAC DS_Store supress
+    - name: Disable DS_Store on USB Drives
+      community.general.osx_defaults:
+        domain: com.apple.desktopservices
+        key: DSDontWriteUSBStores
+        type: bool
+        value: true
+        state: present
+      tags: [ config ]
+    - name: Disable DS_Store on Network Drives
+      community.general.osx_defaults:
+        domain: com.apple.desktopservices
+        key: DSDontWriteNetworkStores
+        type: bool
+        value: true
+        state: present
+      tags: [ config ]
+
+# Git Configuration section
+    - name: User git ignore DS_Store
+      ansible.builtin.lineinfile:
+        path: ~/.config/git/ignore
+        line: '.DS_Store'
+        create: true
+        mode: '0644'
+      tags: [ config ]
+    - name: User git ignore Icon
+      ansible.builtin.lineinfile:
+        path: ~/.config/git/ignore
+        line: 'Icon^M'
+        create: true
+        mode: '0644'
+      tags: [ config ]
+    - name: Git config Global User
+      community.general.git_config:
+        name: user.name
+        value: "Jeff Kelly"
+        scope: global
+      tags: [ config ]
+    - name: Git config global email
+      community.general.git_config:
+        name: user.email
+        value: jeff.kelly@mobia.io
+        scope: global
+      tags: [ config ]

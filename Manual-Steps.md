@@ -7,3 +7,6 @@ unzip archive
 Launch "Font Book" App
 > File -> Add fonts to current user
 > Select Downloads/Inter/Inter-VariableFont_slnt,wght.tff
+
+## To be automated
+
