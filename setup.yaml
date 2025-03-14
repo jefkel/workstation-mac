@@ -6,6 +6,12 @@
     - name: Setup SSH environment
       ansible.builtin.import_tasks: tasks/prep-ssh.yaml
 
+    - name: Brew Update
+      community.general.homebrew:
+        name: ansible
+        state: present
+        update_homebrew: true
+      tags: [ apps ]
     - name: Brew Cask App installation (failure expected)
       community.general.homebrew_cask:
         name: "{{ item }}"

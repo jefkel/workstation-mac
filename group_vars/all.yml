@@ -1,2 +1,6 @@
 ---
-defaultkeyname: "{{ vault_sshkeyname | default('id_rsa') }}"
+defaultkeyname: "{{ vaultsshkeyname | default('id_rsa') }}"
+id:
+  first: "{{ vaultId.first | default('Jeff') }}"
+  last: "{{ vaultId.last | default('Kelly') }}"
+  email: "{{ vaultId.email | default('jeff.kelly@cavenet.ca') }}"
