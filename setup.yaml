@@ -22,6 +22,7 @@
         - drawio
         - notion
         - obs
+        - basictex
       tags: [ apps ]
     - name: More brew apps
       community.general.homebrew:
@@ -38,6 +39,7 @@
         - kubectl
         - minio-mc
         - govc
+        - pandoc
       tags: [ apps ]
 
 # MAC DS_Store supress
