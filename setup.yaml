@@ -30,16 +30,18 @@
         state: latest
       with_items:
         - ansible-lint
-        - podman
-        - jq
-        - gojq
         - go
-        - openshift-cli
+        - gojq
+        - govc
+        - helm
+        - helmfile
+        - jq
         - kubernetes-cli
         - kubectl
         - minio-mc
-        - govc
+        - openshift-cli
         - pandoc
+        - podman
       tags: [ apps ]
 
 # MAC DS_Store supress
