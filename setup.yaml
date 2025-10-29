@@ -23,6 +23,7 @@
         - notion
         - obs
         - basictex
+        - docker
       tags: [ apps ]
     - name: More brew apps
       community.general.homebrew:
@@ -30,6 +31,7 @@
         state: latest
       with_items:
         - ansible-lint
+        - gitleaks
         - go
         - gojq
         - govc
@@ -41,7 +43,7 @@
         - minio-mc
         - openshift-cli
         - pandoc
-        - podman
+        - pre-commit
       tags: [ apps ]
 
 # MAC DS_Store supress
