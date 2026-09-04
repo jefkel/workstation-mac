@@ -17,15 +17,16 @@
         name: "{{ item }}"
         state: latest
       with_items:
+        - 1password
+        - basictex
         - brave-browser
         - calibre
-        - visual-studio-code
-        - qlmarkdown
         - drawio
         - notion
         - obs
         - podman-desktop
-        - basictex
+        - qlmarkdown
+        - visual-studio-code
 #        - synology-drive
       tags: [ apps ]
     - name: More brew apps
